@@ -1,7 +1,7 @@
 <template>
 <div class="main-page-page page6" id="page6">
     <div class="content">
-        <div class="title">나만의 것을 만드는 <br>크리에이터가 되고 싶나요?</div>
+        <div class="title"><span class="my">나만의 것</span>을 만드는 <br>크리에이터가 되고 싶나요?</div>
         <div class="apply-warp" @click="applyClick">지금 지원하기</div>
     </div>
 </div>
@@ -38,6 +38,11 @@ export default {
 
 .title {
     color: #425563;
+}
+
+.title:hover .my {
+    color: #00A9CE;
+    transition: 250ms;
 }
 
 .apply-warp {
