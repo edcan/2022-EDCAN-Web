@@ -1,24 +1,8 @@
 <template>
 <div class="main-page-page page6" id="page6">
     <div class="content">
-        <div class="title">
-            <h3>지금 바로 EDCAN에 지원하세요</h3>
-            <p>
-                최고의 동아리 EDCAN 에서 여러분들을 기다립니다.
-                <br>
-                소프트웨어과 1학년, 콘텐츠디자인과 1학년이 지원할 수 있습니다.
-            </p>
-        </div>
-        <div class="jiwon-form-wrap">
-            <div class="goto-jiwon-wrap at">
-                <img src="/img/ATELIER_typo_verticality.svg" alt="">
-                <button class="goto-form nomal-button" @click="$gotoJiwonAt">개발자 유닛 지원하기</button>
-            </div>
-            <div class="goto-jiwon-wrap px">
-                <img src="/img/Pixel_typo_verticality.svg" alt="">
-                <button class="goto-form nomal-button" @click="$gotoJiwonPx">디자이너 유닛 지원하기</button>
-            </div>
-        </div>
+        <div class="title">나만의 것을 만드는 <br>크리에이터가 되고 싶나요?</div>
+        <div class="apply-warp" @click="applyClick">지금 지원하기</div>
     </div>
 </div>
 </template>
@@ -26,82 +10,62 @@
 <script>
 export default {
     name : "Page6",
+    methods : {
+        applyClick(e) {
+            e
+            open("https://form.edcan.kr")
+        }
+    }
 }
 </script>
 
 <style scoped>
-.content {
-    padding-bottom : 100px;
+.page6, .content, .main-page-page{
+    min-height: 0px;
+}
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap : 112px;
+.main-page-page {
+    padding: 150px 0;
+}
+
+.content > * {
+    display: inline-block;
+    font-size: 48px;
+    font-weight: bold;
+
+    margin: 0 32px;
 }
 
 .title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap : 35px;
+    color: #425563;
 }
 
-.title h3 {
-    font-family: "Spoqa Han Sans Neo";
-    font-weight: bold;
-    font-size: 30px;
-    text-align: center;
+.apply-warp {
+    color: #768692;
+
+    cursor: pointer;
+
+    transition: 250ms;
 }
 
-.title p {
-    font-size: 25px;
-    line-height: 35px;
-    text-align: center;
+.apply-warp:hover {
+    color: #00A9CE;
+    transform: scale(1.015);
 }
 
-.goto-form {
-    font-size: 20px;
-    padding : 14px 5px;
-}
-
-.jiwon-form-wrap {
-    width : 100%;
-    max-width: 600px;
-    
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap : 80px;
-
-}
-
-.goto-jiwon-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: space-between;
-    gap : 50px;
-}
-
-.goto-jiwon-wrap.at img {
-    width : 200px;
-    margin : 0 auto;
-}
-
-.goto-jiwon-wrap.px img {
-    width : 250px;
-    margin : 0 auto;
-}
-
-.goto-jiwon-wrap button {
-    
-}
-
-
-@media (max-width : 650px) {
-    .jiwon-form-wrap {
-        grid-template-columns: 1fr;
+@media (max-width: 900px) {
+    .content > * {
+        font-size: 32px;
     }
 }
 
+@media (max-width: 500px) {
+    .title {
+        font-size: 27px;
+    }
+
+    .apply-warp {
+        font-size: 31px;
+    }
+}
 </style>
